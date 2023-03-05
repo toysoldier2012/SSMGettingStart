@@ -1,2 +1,5 @@
-package com.xiaoyu.sakila.pojo;public class City {
+package com.xiaoyu.sakila.pojo;
+
+public class City {
+
 }

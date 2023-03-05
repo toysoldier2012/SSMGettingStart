@@ -1,4 +1,4 @@
-package com.xiaoyu.mybatis.utils;
+package com.xiaoyu.sakila.utils;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;

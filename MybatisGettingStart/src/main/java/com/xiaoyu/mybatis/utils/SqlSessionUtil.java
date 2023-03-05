@@ -1,6 +1,5 @@
 package com.xiaoyu.mybatis.utils;
 
-import com.xiaoyu.mybatis.mapper.UserMapper;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -8,7 +7,6 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.Reader;
 
 public class SqlSessionUtil {
 	private static SqlSession sqlSession = null;
