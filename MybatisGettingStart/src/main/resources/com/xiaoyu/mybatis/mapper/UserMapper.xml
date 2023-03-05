@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xiaoyu.mybatis.mapper.UserMapper">
+    <!--    int insertUser();-->
+    <insert id="insertUser">
+        insert into t_user values(null, 'admin2', '123456', 23, 'm', '123456@gmail.com');
+    </insert>
+
+    <!--    void insertUser(User user);-->
+    <insert id="insertUserByUser" useGeneratedKeys="true" keyProperty="id">
+        insert into t_user values(#{id}, #{username}, #{password}, #{age}, #{gender}, #{email});
+    </insert>
+
+
+    <!--    void updateUser();-->
+    <update id="updateUser">
+        update t_user set username = 'admin5' where id = 5;
+    </update>
+
+
+    <!--    void deleteUser();-->
+    <delete id="deleteUser">
+        delete from t_user where id = 6;
+    </delete>
+
+
+    <!--    User selectUserById(int id);-->
+    <select id="selectUserById" resultType="User">
+        select * from t_user where id = #{id};
+    </select>
+
+    <!--    List<User> selectUsers();-->
+    <select id="selectUsers" resultType="User">
+        select * from t_user;
+    </select>
+
+    <!--    Map<String, Object> getUserByIdToMap(@Param("id") int id);-->
+    <select id="getUserByIdToMap" resultType="Map">
+        select * from t_user where id = #{id};
+    </select>
+
+    <!--    Map<String, Object> getAllUserToMap();-->
+    <select id="getAllUserToMap" resultType="Map">
+        select * from t_user;
+    </select>
+
+    <!--    Map<String, Object> getUserToMapWithMapKey();-->
+    <select id="getUserToMapWithMapKey" resultType="Map">
+        select * from t_user;
+    </select>
+
+    <!--    List<Map<String, Object>> getUsersByName(String userName);-->
+    <select id="getUsersByName" resultType="Map">
+        <!--        select * from t_user where username like '%${username}%'-->
+        <!--        select * from t_user where username like concat('%', #{username}, '%')-->
+        select * from t_user where username like "%"#{username}"%"
+    </select>
+
+
+    <!--    User checkLogin(String username, String password);-->
+    <select id="checkLogin" resultType="User">
+        select * from t_user where username = #{arg0} and password = #{arg1}
+    </select>
+
+    <!--    User checkLoginByMap(Map<String, Object> map);-->
+    <select id="checkLoginByMap" resultType="User">
+        select * from t_user where username = #{username} and password = #{password}
+    </select>
+
+    <!--    int checkLoginByParam(@Param("username") String username, @Param("password") String password);-->
+    <select id="checkLoginByParam" resultType="Boolean">
+        select * from t_user where username = #{username} and password = #{password}
+    </select>
+
+
+</mapper>
