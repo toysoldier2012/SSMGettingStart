@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xiaoyu.sakila.mapper.CityMapper">
+
+    <resultMap id="customCityMap" type="City">
+        <id column="city_id" property="id"/>
+        <result column="city" property="name"/>
+        <result column="last_update" property="lastUpdate"/>
+    </resultMap>
+
+    <!--City getCityById(@Param("id") int id);-->
+    <select id="getCityById" resultMap="customCityMap">
+        select * from city where city_id = ${id}
+    </select>
+
+    <resultMap id="customCityCountryMap" type="City">
+        <id column="city_id" property="id"/>
+        <result column="city" property="name"/>
+        <result column="last_update" property="lastUpdate"/>
+
+        <association property="country" select="com.xiaoyu.sakila.mapper.CountryMapper.getCountryById"
+                     column="country_id" fetchType="lazy"/>
+    </resultMap>
+
+    <!--City getCityAndHisCountryById(@Param("id") int id);-->
+    <select id="getCityAndHisCountryById" resultMap="customCityCountryMap">
+        select * from city ci
+        left join country cn on ci.country_id = cn.country_id
+        where ci.city_id = #{id};
+    </select>
+
+    <!--List<City> getCitiesByCountryId(@Param("countryId") int countryId);-->
+    <select id="getCitiesByCountryId" resultType="City">
+        select * from city where country_id = #{countryId}
+    </select>
+</mapper>

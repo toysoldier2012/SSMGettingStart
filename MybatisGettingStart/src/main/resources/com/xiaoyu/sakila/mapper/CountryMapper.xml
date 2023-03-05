@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xiaoyu.sakila.mapper.CountryMapper">
+
+    <!--    List<Country> getCountrys();-->
+    <select id="getCountrys" resultType="Country">
+        select * from country limit 10;
+    </select>
+
+    <!--Country getCountryById(@Param("countryId") int countryId);-->
+    <select id="getCountryById" resultType="Country">
+        select * from country where country_id = #{countryId}
+    </select>
+
+    <resultMap id="countryAndHisCitiesMap" type="Country">
+        <id column="country_id" property="countryId"/>
+        <result column="country" property="country"/>
+        <result column="last_update" property="lastUpdate"/>
+
+        <collection property="listCities" select="com.xiaoyu.sakila.mapper.CityMapper.getCitiesByCountryId"
+                    column="country_id">
+        </collection>
+    </resultMap>
+
+    <!--Country getCountryAndHisCitiesById(@Param("countryId") int countryId);-->
+    <select id="getCountryAndHisCitiesById" resultMap="countryAndHisCitiesMap">
+        select * from country where country_id = #{countryId}
+    </select>
+</mapper>
