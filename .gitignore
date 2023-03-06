@@ -37,5 +37,6 @@ build/
 ### Mac OS ###
 .DS_Store
 
-**/jdbc.properties
-**/generatorConfig.xml
+/MybatisGene/src/main/resources/generatorConfig.xml
+/MybatisGene/src/main/resources/jdbc.properties
+/MybatisGettingStart/src/main/resources/jdbc.properties
