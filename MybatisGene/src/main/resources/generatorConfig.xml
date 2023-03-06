@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+
+    <context id="DB2Tables"  targetRuntime="MyBatis3">
+
+        <!-- 数据库连接驱动类,URL，用户名、密码 -->
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/sakila?serverTimezone=UTC"
+                        userId="root"
+                        password="evvf8YXEEB">
+        </jdbcConnection>
+
+        <!-- 生成Domain模型：包名(targetPackage)、位置(targetProject) -->
+        <javaModelGenerator targetPackage="com.xiaoyu.mbg.pojo" targetProject="./src/main/java">
+            <!-- 在targetPackage的基础上，根据数据库的schema再生成一层package，最终生成的类放在这个package下，默认为false -->
+            <property name="enableSubPackages" value="true"/>
+            <!-- 设置是否在getter方法中，对String类型字段调用trim()方法-->
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <!-- 生成xml映射文件：包名(targetPackage)、位置(targetProject) -->
+        <sqlMapGenerator targetPackage="com.xiaoyu.mbg.mapper" targetProject="./src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <!-- 生成DAO接口：包名(targetPackage)、位置(targetProject) -->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.xiaoyu.mbg.mapper" targetProject="./src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <!-- 要生成的表：tableName - 数据库中的表名或视图名，domainObjectName - 实体类名 -->
+        <table tableName="actor" domainObjectName="Actor" />
+        <table tableName="address" domainObjectName="Address" />
+        <table tableName="category" domainObjectName="Category" />
+        <table tableName="city" domainObjectName="City" />
+        <table tableName="country" domainObjectName="Country" />
+        <table tableName="customer" domainObjectName="Customer" />
+        <table tableName="film" domainObjectName="Film" />
+        <table tableName="film_actor" domainObjectName="FilmActor" />
+        <table tableName="film_category" domainObjectName="FilmCategory" />
+        <table tableName="film_text" domainObjectName="FilmText" />
+        <table tableName="inventory" domainObjectName="Inventory" />
+        <table tableName="language" domainObjectName="Language" />
+        <table tableName="payment" domainObjectName="Payment" />
+        <table tableName="rental" domainObjectName="Rental" />
+        <table tableName="staff" domainObjectName="Staff" />
+        <table tableName="store" domainObjectName="Store" />
+
+    </context>
+</generatorConfiguration>

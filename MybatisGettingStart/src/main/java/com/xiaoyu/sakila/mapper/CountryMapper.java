@@ -10,5 +10,7 @@ public interface CountryMapper {
 
 	Country getCountryById(@Param("countryId") int countryId);
 
+	Country getCountryByName(@Param("countryName") String countryName);
+
 	Country getCountryAndHisCitiesById(@Param("countryId") int countryId);
 }

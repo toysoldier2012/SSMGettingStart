@@ -3,7 +3,7 @@ package com.xiaoyu.sakila.pojo;
 import java.sql.Timestamp;
 
 public class City {
-	private int id;
+	private Integer id;
 	private String name;
 	private Timestamp lastUpdate;
 	private Country country;
@@ -11,17 +11,17 @@ public class City {
 	public City() {
 	}
 
-	public City(int id, String name, Timestamp lastUpdate) {
+	public City(Integer id, String name, Timestamp lastUpdate) {
 		this.id = id;
 		this.name = name;
 		this.lastUpdate = lastUpdate;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

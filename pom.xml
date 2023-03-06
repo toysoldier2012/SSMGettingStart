@@ -8,8 +8,10 @@
     <artifactId>SSMGettingStart</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
+
     <modules>
         <module>MybatisGettingStart</module>
+        <module>MybatisGene</module>
     </modules>
 
     <properties>

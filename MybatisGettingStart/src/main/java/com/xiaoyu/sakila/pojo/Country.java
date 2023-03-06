@@ -4,7 +4,7 @@ import java.sql.Timestamp;
 import java.util.List;
 
 public class Country {
-	private int countryId;
+	private Integer countryId;
 	private String country;
 	private Timestamp lastUpdate;
 	private List<City> listCities;
@@ -12,17 +12,17 @@ public class Country {
 	public Country() {
 	}
 
-	public Country(int countryId, String country, Timestamp lastUpdate) {
+	public Country(Integer countryId, String country, Timestamp lastUpdate) {
 		this.countryId = countryId;
 		this.country = country;
 		this.lastUpdate = lastUpdate;
 	}
 
-	public int getCountryId() {
+	public Integer getCountryId() {
 		return countryId;
 	}
 
-	public void setCountryId(int countryId) {
+	public void setCountryId(Integer countryId) {
 		this.countryId = countryId;
 	}
 

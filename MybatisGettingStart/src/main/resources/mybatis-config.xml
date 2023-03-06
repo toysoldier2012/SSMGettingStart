@@ -39,5 +39,6 @@
     <mappers>
         <package name="com.xiaoyu.mybatis.mapper"/>
         <package name="com.xiaoyu.sakila.mapper"/>
+        <package name="com.xiaoyu.dynamic.mapper"/>
     </mappers>
 </configuration>
