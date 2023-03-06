@@ -2,8 +2,6 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
-MybatisGene/src/main/resources/jdbc.properties
-MybatisGettingStart/src/main/resources/jdbc.properties
 
 ### IntelliJ IDEA ###
 .idea/
@@ -39,3 +37,6 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+MybatisGene/src/main/resources/jdbc.properties
+MybatisGettingStart/src/main/resources/jdbc.properties
