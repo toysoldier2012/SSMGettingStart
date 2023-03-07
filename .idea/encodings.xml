@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/MybatisGene/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/MybatisGene/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/MybatisGettingStart/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/MybatisGettingStart/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/SSMExercice/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/SSMExercice/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mybatis-generator-exercise/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mybatis-generator-exercise/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mybatis-getting-start/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mybatis-getting-start/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-getting-start/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-getting-start/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
   </component>
