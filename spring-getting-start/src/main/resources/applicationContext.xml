@@ -1,10 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="
-        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util
+        http://www.springframework.org/schema/util/spring-util-4.0.xsd">
 
     <!-- bean definitions here -->
-    <bean id="helloSpring" class="com.xiaoyu.spring.pojo.HelloSpring"/>
+    <bean id="helloSpring" class="com.xiaoyu.spring.HelloSpring"/>
+
+    <bean id="actor" class="com.xiaoyu.spring.pojo.Actor">
+        <property name="id" value="1"></property>
+        <property name="name">
+            <null/>
+        </property>
+        <property name="gender">
+            <value><![CDATA[a]]></value>
+        </property>
+        <property name="film">
+            <bean id="filmB" class="com.xiaoyu.spring.pojo.Film">
+                <property name="id" value="123"></property>
+                <property name="name" value="asdf"></property>
+            </bean>
+        </property>
+        <property name="hobby">
+            <array>
+                <!--<ref></ref>-->
+                <value>a</value>
+                <value>b</value>
+                <value>c</value>
+            </array>
+        </property>
+
+        <property name="helloSprings" ref="helloSprings"></property>
+
+        <property name="testMaps">
+            <map>
+                <entry key="a" value-ref="filmC"></entry>
+                <entry key="b" value-ref="filmC"></entry>
+                <entry key="c" value-ref="filmC"></entry>
+            </map>
+        </property>
+    </bean>
+
+    <util:list id="helloSprings">
+        <ref bean="helloSpring"></ref>
+        <ref bean="helloSpring"></ref>
+        <ref bean="helloSpring"></ref>
+    </util:list>
+
+    <util:map id="testMapsB">
+        <entry key="a" value-ref="filmC"></entry>
+        <entry key="b" value-ref="filmC"></entry>
+        <entry key="c" value-ref="filmC"></entry>
+    </util:map>
+
+    <bean id="filmC" class="com.xiaoyu.spring.pojo.Film">
+        <property name="id" value="1"/>
+        <property name="name" value="b"/>
+    </bean>
+
+    <bean id="actorB" class="com.xiaoyu.spring.pojo.Actor" p:id="100" p:name="abcdeft" p:film-ref="filmC" p:gender="M"
+          p:helloSprings-ref="helloSprings" p:testMaps-ref="testMapsB"/>
 
 </beans>
